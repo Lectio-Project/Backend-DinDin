@@ -30,6 +30,7 @@ export class AuthService {
     const accessToken = this.jwt.sign({ sub: user.id })
 
     return {
+      email,
       access_token: accessToken,
     }
   }

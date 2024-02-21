@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module'
 import { UsersModule } from './auth/users.module'
 import { ZodValidationPipe } from './pipes/zod-validation-pipe'
 import { PrismaModule } from './prisma/prisma.module'
+import { UpdateUserController } from './controllers/update-user.controller'
 
 @Module({
   imports: [
@@ -20,7 +21,7 @@ import { PrismaModule } from './prisma/prisma.module'
     UsersModule,
     PrismaModule,
   ],
-  controllers: [CreateAccountController],
+  controllers: [CreateAccountController, UpdateUserController],
   providers: [
     PrismaService,
     AuthService,
