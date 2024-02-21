@@ -7,9 +7,11 @@ import {
   NotFoundException,
   Param,
   Patch,
+  UseGuards,
   UsePipes,
 } from '@nestjs/common'
 import { hash } from 'bcryptjs'
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard'
 import { ZodValidationPipe } from 'src/pipes/zod-validation-pipe'
 import { PrismaService } from 'src/prisma/prisma.service'
 import { z } from 'zod'
@@ -29,6 +31,7 @@ const userDataBodySchema = z.object({
 type UserDataBodySchema = z.infer<typeof userDataBodySchema>
 
 @Controller('/user')
+@UseGuards(JwtAuthGuard)
 export class UpdateUserController {
   constructor(private prisma: PrismaService) {}
 
