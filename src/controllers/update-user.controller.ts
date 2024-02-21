@@ -81,7 +81,7 @@ export class UpdateUserController {
         },
       })
 
-      if (emailAlreadyExists) {
+      if (emailAlreadyExists && emailAlreadyExists.id !== user.id) {
         throw new ConflictException(
           'User with same e-mail address already exists!',
         )
