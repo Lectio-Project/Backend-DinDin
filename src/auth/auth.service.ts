@@ -32,6 +32,7 @@ export class AuthService {
     return {
       email,
       access_token: accessToken,
+      id: user.id,
     }
   }
 }
