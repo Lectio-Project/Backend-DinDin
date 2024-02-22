@@ -1,73 +1,85 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# DinDin API
+  API de gerenciamento de despesas.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
+## ⚙️ Instalação e Configuração 
+#### Siga os seguintes passos:
+1. Abra o terminal e clone este repositório para sua máquina com o seguinte comando:
 ```bash
-$ npm install
+git clone https://github.com/Lectio-Project/Backend-DinDin.git
 ```
 
-## Running the app
-
+2. Navegue até a pasta do projeto com o comando:
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+cd Backend-DinDin
 ```
 
-## Test
-
+3. Abra o projeto no seu VsCode (Se não tiver instalado, instale-o [aqui!](https://code.visualstudio.com/download)):
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+code .
 ```
 
-## Support
+4. Renomei o arquivo **.env.example** para **.env** ou crie um arquivo **.env** na raiz do projeto
+- Crie e/ou preencha no arquivo **.env** a variável de ambiente **DATABASE_URL** com o link para o seu banco de dados MongoDB
+- No arquivo **.env** crie e/ou preencha o **JWT_SECRET_KEY** com a sua chave JWT secreta
+ 
+7. Verifique se você possui o Node.js instalado em sua máquina, caso não instale-o,  [Baixe o Node.js aqui!](https://nodejs.org)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+8. Instale as dependências do projeto com o comando:
+```bash
+npm install
+```
 
-## Stay in touch
+9. Rode o seguinte comando para inicializar o servidor:
+```bash
+npm run start
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+10. Para traduzir seu schema do Prisma ORM em código TypeScript que você pode usar em seu aplicativo para interagir com o banco de dados de forma segura e tipada rode o comando abaixo:
+```bash
+npx prisma generate
+```
 
-## License
+11. Para aplicar todas as alterações necessárias para garantir que o esquema do banco de dados corresponda ao seu esquema definido no arquivo rode o seguinte comando:
+```bash
+npx prisma db push
+```
 
-Nest is [MIT licensed](LICENSE).
+## 📡 Rotas
+### Usuário
+- Cadastro de usuário:
+```ts
+routes.post("/sign-up");
+```
+
+- Login de usuário:
+```ts
+routes.post("/login");
+```
+
+- Atualização de usuário:
+```js
+routes.put("/user/:id");
+```
+
+## 🆕 Funcionalidades
+- Usuários:
+1. Cadastrar usuário
+2. Login de usuário
+3. Atualização de usuário
+4. Autenticação e Autorização
+
+## 🔧 Tecnologias
+- Nest
+- Express
+- TypeScript
+- Zod
+- Prisma ORM
+- MongoDB
+  
+## 🚀 Deploy
+- Link da API em produção:
+```text
+Em Breve
+```
+
+&copy; MIT License 2024, feito com ❤️ por [Alisson Romão](https://github.com/alissonromaosantos), [Vanessa Ribeiro](https://github.com/vanessaribeiro03) e [Rochel Rodrigues](https://github.com/Rochelrrc).
